@@ -1,5 +1,8 @@
 # Online Food Ordering System
 
+## Document
+Details: https://docs.google.com/document/d/1kWNfs8O10WJ0zEZyeNetlHNIO-o-UuEBMYqJfK0Glhw/edit?usp=sharing
+
 ## Overview
 
 The **Online Food Ordering System** is designed to streamline the process of food ordering from various restaurants, providing customers with an easy way to browse menus, select multiple items, and place orders efficiently. The system also ensures that restaurants' capacities are managed dynamically, with configurable strategies for selecting restaurants based on item price or restaurant rating.
