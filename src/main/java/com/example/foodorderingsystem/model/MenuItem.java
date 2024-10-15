@@ -1,13 +1,15 @@
 package com.example.foodorderingsystem.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -20,8 +22,8 @@ public class MenuItem {
     private Long id;
 
     private String name;
-    private double price;
 
-    @ManyToMany(mappedBy = "menuItems")
-    private Set<Restaurant> restaurants;
+    @OneToMany(mappedBy = "menuItem")
+    @JsonManagedReference
+    private Set<RestaurantMenuItem> restaurantMenuItems = new HashSet<>();
 }
