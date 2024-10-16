@@ -5,12 +5,16 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.HashMap;
+import java.util.Map;
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class OrderRequestDTO {
-    private HashMap<Long, Integer> items; // key: itemId, value: quantity
+public class FoodOrderResponseDTO {
+    private Long orderId;
+    private Long restaurantId;
+    private Map<Long, Integer> items;
+    private String status;
+    private Double totalCost;
 }

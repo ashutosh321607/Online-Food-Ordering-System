@@ -1,5 +1,6 @@
 package com.example.foodorderingsystem.strategy;
 
+import com.example.foodorderingsystem.strategy.enums.RestaurantSelectionStrategyType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -18,11 +19,11 @@ public class RestaurantSelectionStrategyFactory {
         this.highestRatingStrategy = highestRatingStrategy;
     }
 
-    public RestaurantSelectionStrategy getStrategy(final String strategyType) {
-        switch (strategyType.toLowerCase()) {
-            case "lowest_cost":
+    public RestaurantSelectionStrategy getStrategy(RestaurantSelectionStrategyType strategyType) {
+        switch (strategyType) {
+            case LOWEST_COST:
                 return lowestCostStrategy;
-            case "highest_rating":
+            case HIGHEST_RATING:
                 return highestRatingStrategy;
             default:
                 throw new IllegalArgumentException("Unknown strategy type: " + strategyType);

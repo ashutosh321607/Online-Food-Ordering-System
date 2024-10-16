@@ -40,4 +40,8 @@ public class Restaurant {
     @OneToMany(mappedBy = "restaurant")
     @JsonManagedReference
     private Set<RestaurantMenuItem> restaurantMenuItems = new HashSet<>();
+
+    @OneToMany(mappedBy = "restaurant")
+    @JsonManagedReference
+    private Set<FoodOrder> ongoingFoodOrders = new HashSet<>();
 }

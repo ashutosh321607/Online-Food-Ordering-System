@@ -31,7 +31,7 @@ public class MenuItemService {
 
     @Transactional
     public MenuItemDTO updateMenuItem(@NonNull final Long menuItemId,
-                                      @NonNull final MenuItemDTO menuItemDTO) throws ItemNotAvailableException {
+                                      @NonNull final MenuItemDTO menuItemDTO) {
         MenuItem menuItem = menuItemRepository.findById(menuItemId)
                 .orElseThrow(() -> new ItemNotAvailableException("MenuItem not found"));
         menuItem.setName(menuItemDTO.getName());
